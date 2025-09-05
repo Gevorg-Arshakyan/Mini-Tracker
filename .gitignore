@@ -1,28 +1,53 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
-
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
-
-# Environment files
-/.env
-
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Logs
+############################
+# Root-level ignores
+############################
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+.env
+.env.*
+
+############################
+# Monorepo: Frontend (Angular)
+############################
+frontend/node_modules/
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/pnpm-lock.yaml
+frontend/.angular/
+frontend/.angular/*
+frontend/.ng/
+frontend/dist/
+frontend/out-tsc/
+frontend/tmp/
+frontend/coverage/
+frontend/e2e/test-output/
+frontend/.env
+frontend/.env.*
+
+############################
+# Monorepo: Backend (Node/Express)
+############################
+backend/node_modules/
+backend/package-lock.json
+backend/yarn.lock
+backend/pnpm-lock.yaml
+backend/.env
+backend/.env.*
+backend/coverage/
+backend/logs/
+backend/tmp/
+
+############################
+# Angular legacy files (if generated)
+############################
+.angular/
+/.angular-cli.json
+/.ng/

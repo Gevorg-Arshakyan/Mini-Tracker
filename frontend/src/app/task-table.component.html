@@ -1,0 +1,27 @@
+<p-table [value]="tasks" dataKey="id" [responsiveLayout]="'scroll'" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 240px">ID Задачи</th>
+      <th>Название</th>
+      <th style="width: 160px">Статус</th>
+      <th style="width: 120px">Действия</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-task>
+    <tr>
+      <td>{{ task.id || task._id }}</td>
+      <td>{{ task.title }}</td>
+      <td>
+        <div class="flex align-items-center gap-2">
+          <p-tag [severity]="task.completed ? 'success' : 'warning'" [value]="task.completed ? 'Выполнена' : 'Открыта'"></p-tag>
+          <p-checkbox class="big-check" binary="true" [ngModel]="task.completed" (onChange)="onToggle.emit({task, value: $event.checked})"></p-checkbox>
+        </div>
+      </td>
+      <td>
+        <button pButton icon="pi pi-trash" severity="danger" (click)="onDelete.emit(task)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+

@@ -1,0 +1,54 @@
+/* Prime styles via CDN as a fallback if local resolution fails */
+@import url('https://unpkg.com/primeng@20.1.1/resources/themes/lara-light-blue/theme.css');
+@import url('https://unpkg.com/primeng@20.1.1/resources/primeng.min.css');
+@import url('https://unpkg.com/primeicons@7.0.0/primeicons.css');
+@import url('https://unpkg.com/primeflex@3.3.1/primeflex.css');
+
+/* App globals */
+body { background: #f6f8fb; }
+.container { padding: 16px; }
+.toolbar { margin-bottom: 12px; }
+.big-check { --p-checkbox-width: 1.25rem; --p-checkbox-height: 1.25rem; }
+.dialog-form .p-field { margin-bottom: 12px; }
+.dialog-footer { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Visual theme overrides to add color and contrast */
+.app-toolbar.p-toolbar {
+  background: #0ea5e9; /* cyan-500 */
+  color: #ffffff;
+  border-radius: 10px;
+}
+.app-toolbar .p-button {
+  background: #0369a1;
+  border-color: #0369a1;
+}
+.app-card .p-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.12);
+}
+
+/* Table styling */
+:root {
+  --table-header-bg: #e0f2fe; /* sky-100 */
+  --table-header-color: #0c4a6e; /* cyan-900 */
+}
+.p-table thead tr {
+  background: var(--table-header-bg);
+  color: var(--table-header-color);
+}
+.p-table tbody tr:hover {
+  background: #f0f9ff;
+}
+
+/* Checkbox visibility and brand color */
+.big-check .p-checkbox-box {
+  border-color: #0ea5e9;
+  background: #ffffff;
+}
+.big-check .p-checkbox-box.p-highlight {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+.big-check .p-checkbox-icon {
+  color: #ffffff;
+}
